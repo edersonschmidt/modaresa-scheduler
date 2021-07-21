@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+.e-schedule-dialog {
+  max-height: none;
+}
+
+.e-schedule-form {
+  min-height: 260px;
+}
+
+.e-popup-content {
+  padding: 0 !important;
+}
+
+.e-popup-footer {
+  padding: 0 !important;
+  height: 0 !important;
+}

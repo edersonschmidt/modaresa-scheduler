@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from "react-router-dom";
+
+import Staff from "./pages/staff"
+import Client from "./pages/client"
+
+import SchedulerPage from "./pages/scheduler";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="modaresa-app">
+      <Router>
+        <Switch>
+          <Route exact path={["/", "/scheduler"]} component={SchedulerPage} />
+          
+          <Route exact path="/staffs" component={Staff.ListPage} />
+          <Route path="/staffs/create" component={Staff.CreatePage} />
+          <Route path="/staffs/:id" component={Staff.UpdatePage} />
+
+          <Route exact path="/clients" component={Client.ListPage} />
+          <Route path="/clients/create" component={Client.CreatePage} />
+          <Route path="/clients/:id" component={Client.UpdatePage} />
+
+          <Redirect from="*" to="/" />
+        </Switch>
+      </Router>
     </div>
   );
 }
